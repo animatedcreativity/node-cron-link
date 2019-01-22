@@ -1,6 +1,6 @@
 {
   "name": "node-cron-link",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Call any link(s) at a set interval repeatedly. GET/POST",
   "main": "main.js",
   "scripts": {
