@@ -59,16 +59,3 @@ module.exports = exports = function(links, config) {
     setLink(link);
   }
 };
-
-var cron = new exports(
-  [{ // link as object
-    url: "https://httpbin.org/post", // link to call
-    time: 2, // call it every 2 minutes.
-    form: {this: "that", that: "this"},
-    json: true,
-    callback: function(error, response, body) { // callback after link is called
-      console.log(error, response, body);
-    }
-  }],
-  {kickStart: true}
-);
