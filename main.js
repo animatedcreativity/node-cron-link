@@ -34,7 +34,7 @@ module.exports = exports = function(links, config) {
         if (config.consoleLog === true) console.log(config.name + ": " + date.toLocaleString() + ": calling link: " + link.url);
       }
       var method = "get";
-      if (typeof link.form !== "undefined") method = "post";
+      if (typeof link.form !== "undefined" || typeof link.formData !== "undefined") method = "post";
       request[method](link, (error, response, body) => {
         if (typeof link.callback === "undefined" && error) {
           console.log(error);
