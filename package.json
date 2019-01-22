@@ -23,6 +23,7 @@
     "cron",
     "link",
     "get",
-    "repeat"
+    "repeat",
+    "post"
   ]
 }

@@ -7,7 +7,7 @@ Call any link(s) at a set interval repeatedly. GET/POST
 
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink(links, config);
+cronLink(links, config);
 ```
 
 links can be (check examples below):
@@ -27,14 +27,14 @@ config (default for all links):
 **Example (Single link):**
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink("https://ipinfo.io/ip", {time: 2, kickStart: true}); //every 2 minutes
+cronLink("https://ipinfo.io/ip", {time: 2, kickStart: true}); //every 2 minutes
 ```
 
 **Example (Single link, with options):**
 
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink({ // link as object
+cronLink({ // link as object
   url: "https://ipinfo.io/ip", // link to call
   time: 2, // call it every 2 minutes.
   callback: function(error, response, body) { // callback after link is called
@@ -47,7 +47,7 @@ var cron = new cronLink({ // link as object
 **Example (Multiple links):**
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink(
+cronLink(
   ["https://ipinfo.io/ip",
   "https://httpbin.org/get"],
   {time: 2, kickStart: true} // every 2 minutes in
@@ -57,7 +57,7 @@ var cron = new cronLink(
 **Example (Multiple links, with options):**
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink(
+cronLink(
   [{ // link as object
     url: "https://ipinfo.io/ip", // link to call
     time: 2, // call it every 2 minutes.
@@ -80,7 +80,7 @@ var cron = new cronLink(
 **Example - Global config for all links:**
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink(
+cronLink(
   [{ // link as object
     url: "https://ipinfo.io/ip", // link to call
     callback: function(error, response, body) { // callback after link is called
@@ -109,7 +109,7 @@ var cronLink = require("node-cron-link");
 var callback = function(error, response, body) { // callback after link is called
   console.log(error, body);
 }
-var cron = new cronLink(
+cronLink(
   [{ // link as object
     url: "https://ipinfo.io/ip", // link to call
     time: 2, // call it every 2 minutes.
@@ -129,7 +129,7 @@ var cron = new cronLink(
 Just add the form OR formData with link object.
 ```
 var cronLink = require("node-cron-link");
-var cron = new cronLink(
+cronLink(
   [{ // link as object
     url: "https://httpbin.org/post", // link to call
     time: 2, // call it every 2 minutes.
